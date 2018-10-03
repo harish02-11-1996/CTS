@@ -1,0 +1,13 @@
+create database harish;
+use harish;
+create table table1(rollno int ,name varchar(20));
+describe table1;
+insert into table1(rollno,name) values(1,'harish');
+insert into table1 values(2,'surya');
+select * from table1;
+show tables;
+drop table table1;
+alter table table1 change rollno rollnumber int not null;
+alter table table1 modify name varchar(100);
+alter table table1 modify rollnumber bigint unsigned default 12 comment 'how are u';
+alter table table1 modify rollnumber bigint signed default -12 comment 'how are u';
