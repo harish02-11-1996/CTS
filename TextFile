@@ -9,7 +9,17 @@ insert into table1 values(2,'surya');
 select * from table1;
 show tables;
 drop table table1;
-alter table table1 change rollno rollnumber int not null;
-alter table table1 modify name varchar(100);
-alter table table1 modify rollnumber bigint unsigned default 12 comment 'how are u';
+alter table table1 change rollno rollnumber int not null;// used to rename the column and give the definition
+alter table table1 modify name varchar(100);// used to give new definition to the column
+alter table table1 modify rollnumber bigint unsigned default 12 comment 'how are u';//used to create a meaning to the column
 alter table table1 modify rollnumber bigint signed default -12 comment 'how are u';
+alter table table1 add column addition bigint generated always as (rollnumber + 1) stored;// used to autogenerate the value
+alter table table1 rename t1;
+alter table t1 modify addition int not null ,change b c varchar(20);//to do modify and change at the same time
+ALTER TABLE table1 ADD d TIMESTAMP;// to add timestamp
+alter table table1 add unique(rollno);//to make a column unique
+alter table table1 add index(name);//to add index
+alter table table1 drop rollno;//used to drop a column
+alter table table1 add abc int UNSIGNED NOT NULL AUTO_INCREMENT,ADD PRIMARYKEY(abc)//used for autoincrementing and autoincrementing column must be a key
+select * from table1 order by rollno desc;//used to display the content in ascending or descending order
+create table t2 like table1;//used to create a new table which is like my old table
